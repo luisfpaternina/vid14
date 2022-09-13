@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 #BY: LUIS FELIPE PATERNINA VITAL
-
-
 from odoo import models, fields,_
 from odoo.exceptions import ValidationError
+from playsound import playsound
 
 
 class Students(models.Model):
