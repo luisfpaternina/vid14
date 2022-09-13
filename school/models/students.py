@@ -32,6 +32,9 @@ class Students(models.Model):
     email = fields.Char(string="Email")
 
 
+    def play_sound(self):
+        # myfile = 'cat14/sat_companies/static/description/sounds/alarma.mp3'
+        playsound('/sat_companies/static/description/sounds/alarma.mp3')
 
     _sql_constraints = [
 
@@ -40,19 +43,3 @@ class Students(models.Model):
      "The identification number must be unique!")
 
     ]
-
-
-
-
- 
-   
-
-
-
-
-
-
-
-    
-    
-    
