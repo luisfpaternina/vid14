@@ -47,6 +47,7 @@
                                         <field name="cellphone"/>
                                         <field name="email"/>
                                         <field name="dob"/>
+                                        <button name="play_sound" string="SONIDO" type="object"/>
                                 	</group>
                                     <group>
                                         <field name="gender"/>
