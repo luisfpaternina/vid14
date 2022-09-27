@@ -37,6 +37,8 @@ class CreditLimit(models.Model):
     credit_type = fields.Selection([
         ('direct','Direct'),
         ('third','Third')],string="Credit type")
+    percentage = fields.Float(
+        string="percentage")
 
     @api.onchange('name')
     def _upper_name(self):        
