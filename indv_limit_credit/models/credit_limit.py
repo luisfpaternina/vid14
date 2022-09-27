@@ -12,6 +12,11 @@ class CreditLimit(models.Model):
         string="Name")
     credit_amount = fields.Float(
         string="Credit amount")
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('current','Current'),
+        ('approved','Approved'),
+        ('done','Done')],string="State")
 
     @api.onchange('name')
     def _upper_name(self):        
