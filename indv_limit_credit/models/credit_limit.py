@@ -39,6 +39,8 @@ class CreditLimit(models.Model):
         ('third','Third')],string="Credit type")
     percentage = fields.Float(
         string="percentage")
+    credit_amount_total = fields.Float(
+        string="Total")
 
     @api.onchange('name')
     def _upper_name(self):        
