@@ -60,6 +60,7 @@
                                 <field name="credit_amount" required="1"/>
                                 <field name="fee_numbers" required="1"/>
                                 <field name="percentage" required="1"/>
+                                <field name="credit_amount_total"/>
                             </group>
                         </group>
                         <br></br><br></br>
