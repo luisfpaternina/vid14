@@ -67,6 +67,7 @@
             name="Credits"
             groups="credit.credit_limit_manager_group"
             web_icon="indv_limit_credit,static/description/icon.png"
+            action="action_view_credit_limit"
             sequence="36"/>
 
         <menuitem 
