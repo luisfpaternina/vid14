@@ -349,4 +349,4 @@ msgstr ""
 #. module: indv_limit_credit
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
 msgid "send to verify"
-msgstr ""
+msgstr "ENVIAR A VERIFICACIÓN"

@@ -77,3 +77,6 @@ class CreditLimitLines(models.Model):
 
     name = fields.Char(
         string="Name")
+    credit_id = fields.Many2one(
+        'credit.limit',
+        string="Credit")
