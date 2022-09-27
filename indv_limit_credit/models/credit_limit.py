@@ -104,10 +104,16 @@ class CreditLimit(models.Model):
                 raise ValidationError(_("The faa numbers can not 0: %s" % record.fee_numbers))
 
     @api.constrains('percentage')
-    def check_faa(self):
+    def check_percentaje(self):
         for record in self:
             if record.percentage < 0:
                 raise ValidationError(_("The percentage can not 0: %s" % record.percentage))
+
+    @api.constrains('credit_amount')
+    def check_credit_amount(self):
+        for record in self:
+            if record.percentage < 0:
+                raise ValidationError(_("The credit amount can not 0: %s" % record.credit_amount))
 
 
 
