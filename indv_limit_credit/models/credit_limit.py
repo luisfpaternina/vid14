@@ -118,8 +118,9 @@ class CreditLimit(models.Model):
         for record in self:
             if record.fee_numbers > 0 and record.percentage > 0:
                 credit_value = record.credit_amount
-                quota = (1 - (1 + record.percentage)** record.percentage) / record.percentage
-                record.credit_amount_total = credit_value / quota
+                quota = (1 - (1 + record.percentage)** record.percentage)
+                div = quota / record.percentage
+                record.credit_amount_total = credit_value / div
             else:
                 record.credit_amount_total = 0
 
