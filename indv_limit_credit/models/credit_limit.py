@@ -56,9 +56,6 @@ class CreditLimit(models.Model):
     is_cancel_credit = fields.Boolean(
         string="Cancel credit")
 
-    @api.onchange('name')
-    def _upper_name(self):        
-        self.name = self.name.upper() if self.name else False
 
     @api.model
     def create(self, vals):
@@ -94,7 +91,7 @@ class CreditLimit(models.Model):
         self.ensure_one()
         same_number_recs = self.search([
             ('partner_id', '=', self.partner_id.id),
-            ('state', '=', self.state),]) - self
+            ('state', '=', 'approved'),]) - self
         if same_number_recs:
             raise ValidationError(_("This partner already a credit in current: %s" % self.partner_id.name))
 
@@ -120,7 +117,9 @@ class CreditLimit(models.Model):
     def calculate_credit(self):
         for record in self:
             if record.fee_numbers > 0 and record.percentage > 0:
-                record.credit_amount_total = record.credit_amount / ((1 - (1 + record.percentage)** (- record.percentage))) / record.percentage
+                credit_value = record.credit_amount
+                quota = (1 - (1 + record.percentage)** record.percentage) / record.percentage
+                record.credit_amount_total = credit_value / quota
             else:
                 record.credit_amount_total = 0
 
