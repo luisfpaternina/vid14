@@ -41,6 +41,9 @@ class CreditLimit(models.Model):
         string="percentage")
     credit_amount_total = fields.Float(
         string="Total")
+    entity_type = fields.Selection([
+        ('bank','Bank'),
+        ('other','Other')],string="Entity type")
     bank_id = fields.Many2one(
         'res.bank',
         string="Bank")
