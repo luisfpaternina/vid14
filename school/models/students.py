@@ -2,7 +2,6 @@
 #BY: LUIS FELIPE PATERNINA VITAL
 from odoo import models, fields,_
 from odoo.exceptions import ValidationError
-from playsound import playsound
 
 
 class Students(models.Model):
@@ -30,10 +29,6 @@ class Students(models.Model):
     neighborhood = fields.Char(string="Neighborhood")
     email = fields.Char(string="Email")
 
-
-    def play_sound(self):
-        # myfile = 'cat14/sat_companies/static/description/sounds/alarma.mp3'
-        playsound('/sat_companies/static/description/sounds/alarma.mp3')
 
     _sql_constraints = [
 
