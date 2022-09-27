@@ -7,5 +7,10 @@
 	        <field name="comment">Manager credit limit Permission Group</field>
 	    </record>
 
+	    <record id="credit_limit_approval_manager_group" model="res.groups">
+	        <field name="name">Manager credit limit approval</field>
+	        <field name="comment">Manager credit limit approval Permission Group</field>
+	    </record>
+
 	</data>
 </odoo>

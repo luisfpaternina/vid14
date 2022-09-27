@@ -44,10 +44,10 @@ class CreditLimit(models.Model):
         result = super(CreditLimit, self).create(vals)
         return result
 
-
     def write_current_state(self):
-        for record in self:
-            record.write({'state': 'current'})
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+            raise UserError('Solo los Directores de tienda pueden aprobar las rendiciones de gastos')
+        self.write({'state': 'current'})
 
 
 
