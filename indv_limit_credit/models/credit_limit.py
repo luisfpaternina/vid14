@@ -120,7 +120,7 @@ class CreditLimit(models.Model):
     @api.depends('credit_amount', 'percentage', 'fee_numbers')
     def calculate_credit(self):
         for record in self:
-            if record.fee_numbers > 0:
+            if record.fee_numbers > 0 and record.percentage > 0:
                 record.credit_amount_total = record.credit_amount / ((1 - (1 + record.percentage)** (- record.percentage))) / record.percentage
             else:
                 record.credit_amount_total = 0
