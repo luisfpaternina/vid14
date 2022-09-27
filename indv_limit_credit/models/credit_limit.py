@@ -97,6 +97,18 @@ class CreditLimit(models.Model):
         if same_number_recs:
             raise ValidationError(_("This partner already a credit in current: %s" % record.partner_id.name))
 
+    @api.constrains('fee_numbers')
+    def check_faa(self):
+        for record in self:
+            if record.fee_numbers < 0:
+                raise ValidationError(_("The faa numbers can not 0: %s" % record.fee_numbers))
+
+    @api.constrains('percentage')
+    def check_faa(self):
+        for record in self:
+            if record.percentage < 0:
+                raise ValidationError(_("The percentage can not 0: %s" % record.percentage))
+
 
 
 class CreditLimitLines(models.Model):
