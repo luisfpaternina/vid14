@@ -45,6 +45,10 @@
                             attrs="{'invisible': [('state', '=', 'cancel')]}"
                             class="btn btn-danger"
                             confirm="Are you sure you want to cancel this?"/>
+                        <button 
+                            name="calculate_credit_quotes"
+                            string="Quotas"
+                            type="object"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <sheet>
