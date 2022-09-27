@@ -65,7 +65,7 @@
         <menuitem 
             id="menu_credit_limit_principal"
             name="Credits"
-            groups="credit.credit_limit_manager_group"
+            groups="indv_limit_credit.credit_limit_manager_group"
             web_icon="indv_limit_credit,static/description/icon.png"
             action="action_view_credit_limit"
             sequence="36"/>
