@@ -27,6 +27,10 @@ class CreditLimit(models.Model):
     vat = fields.Char(
         string="VAT",
         related="partner_id.vat")
+    current_user_id = fields.Many2one(
+        'res.users',
+        'Current User',
+        default=lambda self: self.env.user)
 
     @api.onchange('name')
     def _upper_name(self):        
