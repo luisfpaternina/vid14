@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
                 <tree string="credit_limit">
                     <field name="name"/>
+                    <field name="credit_amount"/>
                 </tree>
             </field>
         </record>
@@ -62,11 +63,17 @@
 
         <!-- MENUS -->
         <menuitem 
+            id="menu_credit_limit_principal"
+            name="Credits"
+            groups="credit.credit_limit_manager_group"
+            web_icon="credit_limit,static/description/icon.png"
+            sequence="36"/>
+
+        <menuitem 
             id="menu_credit_limit"
             name="Credit limit"
-            groups="credit.credit_limit_manager_group"
-            web_icon="school,static/description/icon.png"
-            sequence="36"/>
+            parent="menu_credit_limit_principal"
+            action="action_view_credit_limit"/>
                    
     </data>
 </odoo>
