@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 18:41+0000\n"
-"PO-Revision-Date: 2022-09-27 18:41+0000\n"
+"POT-Creation-Date: 2022-09-27 20:14+0000\n"
+"PO-Revision-Date: 2022-09-27 20:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,20 @@ msgid "Approved"
 msgstr "Aprobado"
 
 #. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__is_approval_credit
+msgid "Aproval credit"
+msgstr "Cédito aprovado"
+
+#. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__bank_id
+#: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__entity_type__bank
+msgid "Bank"
+msgstr "Banco"
 
 #. module: indv_limit_credit
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
@@ -39,6 +50,11 @@ msgstr "CANCELAR"
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__state__cancel
 msgid "Cancel"
 msgstr "CANCELADO"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__is_cancel_credit
+msgid "Cancel credit"
+msgstr "Crédito cancelado"
 
 #. module: indv_limit_credit
 #: model_terms:ir.actions.act_window,help:indv_limit_credit.action_view_credit_limit
@@ -56,6 +72,11 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__create_date
 msgid "Created on"
 msgstr "Creado en"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__credit_id
+msgid "Credit"
+msgstr "Crédito"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_amount
@@ -113,6 +134,16 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__entity_id
+msgid "Entity"
+msgstr "Entidad"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__entity_type
+msgid "Entity type"
+msgstr "Tipo de entidad"
+
+#. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__fee_numbers
 msgid "Fee"
 msgstr "Cuotas"
@@ -165,7 +196,7 @@ msgstr "Información del crédito"
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es un seguidor"
 
 #. module: indv_limit_credit
 #: model:ir.model,name:indv_limit_credit.model_account_move
@@ -264,7 +295,14 @@ msgstr ""
 #: code:addons/indv_limit_credit/models/credit_limit.py:0
 #, python-format
 msgid "Only credit Managers can approve credits"
-msgstr "Solo los usuarios que pertenecen al grupo de aprobador de crédito pueden realizar esta operación"
+msgstr ""
+"Solo los usuarios que pertenecen al grupo de aprobador de crédito pueden "
+"realizar esta operación"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__entity_type__other
+msgid "Other"
+msgstr "Otro"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__partner_id
@@ -290,6 +328,12 @@ msgstr "Estado"
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__credit_type__third
 msgid "Third"
 msgstr "Tercero"
+
+#. module: indv_limit_credit
+#: code:addons/indv_limit_credit/models/credit_limit.py:0
+#, python-format
+msgid "This partner already a credit in current: %s"
+msgstr "Este cliente ya tiene un crédito en curso"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_amount_total
@@ -332,6 +376,11 @@ msgid "approval"
 msgstr "Aprobado"
 
 #. module: indv_limit_credit
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
+msgid "credit"
+msgstr "Crédito"
+
+#. module: indv_limit_credit
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_tree
 msgid "credit_limit"
 msgstr ""
@@ -340,11 +389,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__percentage
 msgid "percentage"
 msgstr "Tasa de interés"
-
-#. module: indv_limit_credit
-#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
-msgid "school"
-msgstr ""
 
 #. module: indv_limit_credit
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form

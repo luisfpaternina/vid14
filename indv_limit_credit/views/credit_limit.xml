@@ -49,6 +49,8 @@
                                 <field name="vat"/>
                                 <field name="create_date"/>
                                 <field name="current_user_id" readonly="1"/>
+                                <field name="is_approval_credit" invisible="1"/>
+                                <field name="is_cancel_credit" invisible="1"/>
                             </group>
                             <group>
                                 <field name="credit_type" required="1"/>
