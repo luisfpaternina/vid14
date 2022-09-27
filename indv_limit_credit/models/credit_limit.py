@@ -133,7 +133,7 @@ class CreditLimit(models.Model):
         i = 1
         while i < self.fee_numbers:
             print(i)
-            lines = env['credit.limit.lines'].create({
+            lines = self.env['credit.limit.lines'].create({
                 'credit_amount': 2000,
                 'name': 'Cuota',
                 })
