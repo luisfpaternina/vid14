@@ -20,7 +20,8 @@ class CreditLimit(models.Model):
         ('draft','Draft'),
         ('current','Validation'),
         ('approved','Approved'),
-        ('done','Done')],string="State")
+        ('done','Done'),
+        ('cancel','Cancel')],string="State")
     partner_id = fields.Many2one(
         'res.partner',
         string="Partner")
