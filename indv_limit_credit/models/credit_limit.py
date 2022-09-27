@@ -160,3 +160,5 @@ class CreditLimitLines(models.Model):
         string="Credit amount")
     date = fields.Date(
         string="Date")
+    item = fields.Integer(
+        string="Item")
