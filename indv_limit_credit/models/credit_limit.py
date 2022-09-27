@@ -9,7 +9,11 @@ class CreditLimit(models.Model):
     _description = 'Credit limit'
 
     name = fields.Char(
-        string="Name")
+        string="Name",
+        readonly=True,
+        required=True,
+        copy=False,
+        default='New')
     credit_amount = fields.Float(
         string="Credit amount")
     state = fields.Selection([
@@ -24,3 +28,11 @@ class CreditLimit(models.Model):
     @api.onchange('name')
     def _upper_name(self):        
         self.name = self.name.upper() if self.name else False
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', 'New') == 'New':
+            vals['name'] = self.env['ir.sequence'].next_by_code('credit.limit') or 'New'       
+
+        result = super(CreditLimit, self).create(vals)
+        return result
