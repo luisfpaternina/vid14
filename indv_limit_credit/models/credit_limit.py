@@ -36,3 +36,12 @@ class CreditLimit(models.Model):
 
         result = super(CreditLimit, self).create(vals)
         return result
+
+
+
+class CreditLimitLines(models.Model):
+    _name = 'credit.limit.lines'
+    _description = 'Credit limit lines'
+
+    name = fields.Char(
+        string="Name")
