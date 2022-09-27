@@ -12,6 +12,7 @@
                     <field name="name"/>
                     <field name="partner_id"/>
                     <field name="credit_amount"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -25,7 +26,7 @@
                 <form string="school">
                     <header>
                         <button name="write_current_state" string="send to verify" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="btn btn-primary"/>
-                        <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'approved')]}" class="btn btn-primary"/>
+                        <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'current')]}" class="btn btn-primary"/>
                         <button name="write_cancel_state" string="CANCEL" type="object" attrs="{'invisible': [('state', '=', 'calcel')]}"  class="btn btn-danger"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
