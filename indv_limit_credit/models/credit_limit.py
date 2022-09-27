@@ -142,3 +142,7 @@ class CreditLimitLines(models.Model):
     credit_id = fields.Many2one(
         'credit.limit',
         string="Credit")
+    credit_amount = fields.Float(
+        string="Credit amount")
+    date = fields.Date(
+        string="Date")

@@ -85,9 +85,12 @@
                         <notebook colspan="4">
                             <page name="credit_information" string="Quotas">
                                 <group>
-                                    <group>
-                                        
-                                    </group>
+                                    <field name="credit_line_ids">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="credit_id"/>
+                                        </tree>
+                                    </field>
                                 </group>
                             </page>
                         </notebook>
