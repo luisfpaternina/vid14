@@ -17,6 +17,9 @@ class CreditLimit(models.Model):
         ('current','Current'),
         ('approved','Approved'),
         ('done','Done')],string="State")
+    partner_id = fields.Many2one(
+        'res.partner',
+        string="Partner")
 
     @api.onchange('name')
     def _upper_name(self):        
