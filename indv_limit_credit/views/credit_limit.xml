@@ -34,6 +34,11 @@
                                 </table>
                             </h1>
                         </div>
+                        <group>
+                            <group>
+                                <field name="credit_amount" required="1"/>
+                            </group>
+                        </group>
                         <br></br><br></br><br></br>
                         <notebook colspan="4">
                             <page name="credit_information" string="Information">
