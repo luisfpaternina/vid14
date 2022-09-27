@@ -131,10 +131,12 @@ class CreditLimit(models.Model):
 
     def calculate_credit_quotes(self):
         i = 1
+        n = 1
         while i < self.fee_numbers:
             print(i)
-            self.credit_line_ids.write({
-                'credit_amount': 2000,
+            n =+ 1
+            self.credit_line_ids.create({
+                'credit_amount': n,
                 'name': 'Cuota',
                 })
             if i == self.fee_numbers:
