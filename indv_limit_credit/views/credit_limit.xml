@@ -90,7 +90,7 @@
                             <page name="credit_information" string="Quotas">
                                 <group>
                                     <field name="credit_line_ids">
-                                        <tree>
+                                        <tree editable="bottom">
                                             <field name="name"/>
                                             <field name="credit_id"/>
                                         </tree>
