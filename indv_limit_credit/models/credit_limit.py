@@ -129,6 +129,18 @@ class CreditLimit(models.Model):
             else:
                 record.credit_amount_total = 0
 
+    def calculate_credit_quotes(self):
+        i = 1
+        while i < self.fee_numbers:
+            print(i)
+            lines = env['credit.limit.lines'].create({
+                'credit_amount': 2000,
+                'name': 'Cuota',
+                })
+            if i == self.fee_numbers:
+                break
+            i += 1
+
 
 
 
