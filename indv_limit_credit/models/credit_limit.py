@@ -75,12 +75,18 @@ class CreditLimit(models.Model):
     def write_approval_state(self):
         if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
-        self.write({'state': 'approved'})
+        self.write({
+            'state': 'approved',
+            'is_approval_credit': True,
+            })
 
     def write_cancel_state(self):
         if not (self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
-        self.write({'state': 'cancel'})
+        self.write({
+            'state': 'cancel',
+            'is_cancel_credit': True,
+            })
 
     @api.constrains('partner_id','state')
     def check_credit(self):
