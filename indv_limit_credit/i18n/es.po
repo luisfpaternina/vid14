@@ -309,7 +309,7 @@ msgstr ""
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__vat
 msgid "VAT"
-msgstr ""
+msgstr "Número de identificación"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__state__current
