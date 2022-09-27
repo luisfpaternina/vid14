@@ -116,7 +116,6 @@ class CreditLimit(models.Model):
             if record.credit_amount < 0:
                 raise ValidationError(_("The credit amount can not 0: %s" % record.credit_amount))
 
-
     @api.depends('credit_amount', 'percentage', 'fee_numbers')
     def calculate_credit(self):
         for record in self:

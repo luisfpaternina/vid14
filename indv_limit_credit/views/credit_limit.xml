@@ -32,6 +32,8 @@
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <sheet>
+                        <widget name="web_ribbon" text="Approved" bg_color="bg-success" attrs="{'invisible': [('is_approval_credit', '=', False)]}"/>
+                        <widget name="web_ribbon" text="Cancel" bg_color="bg-danger" attrs="{'invisible': [('is_cancel_credit', '=', False)]}"/>
                         <div class="oe_title">
                             <h1>
                                 <table>
