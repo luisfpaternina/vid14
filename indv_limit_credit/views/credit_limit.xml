@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>     
 <odoo>
     <data>
-        <record id="view_school_tree" model="ir.ui.view">
-            <field name="name">school.tree</field>
-            <field name="model">school</field>
+
+        <record id="view_credit_limit_tree" model="ir.ui.view">
+            <field name="name">credit.limit.tree</field>
+            <field name="model">credit.limit</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="School">
+                <tree string="credit_limit">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
-        <record id="view_school_form" model="ir.ui.view">
-            <field name="name">school.form</field>
-            <field name="model">school</field>
+
+        <record id="view_credit_limit_form" model="ir.ui.view">
+            <field name="name">credit.limit.form</field>
+            <field name="model">credit.limit</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="school">
                     <sheet>
-                        <field name="photo" widget="image" class="oe_left oe_avatar"/>
                         <div class="oe_title">
                             <h1>
                                 <table>
                                     <tr>
-                                        <td style="padding-right:10px;"><field name="name" required="1" placeholder="Name" /></td>
+                                        <td style="padding-right:10px;"><field name="name" required="1" placeholder="Name"/></td>
                                     </tr>
                                 </table>
                             </h1>
                         </div>
                         <br></br><br></br><br></br>
                         <notebook colspan="4">
-                            <page name="personal_information" string="Information">
+                            <page name="credit_information" string="Information">
                                 <group>
-                                	<group>
-                                		<field name="identification_type"/>
-                                        <field name="identification_number"/>
-                                	</group>
+                                    <group>
+                                        
+                                    </group>
                                 </group>
                             </page>
                         </notebook>
@@ -45,8 +45,8 @@
         </record>
     
         <record model="ir.actions.act_window" id="action_view_school">
-            <field name="name">School</field>
-            <field name="res_model">school</field>
+            <field name="name">Credit limit</field>
+            <field name="res_model">credit.limit</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -56,7 +56,12 @@
         </record>
 
 
-        <menuitem id="menu_school" name="School" groups="school.school_manager_group"  web_icon="school,static/description/icon.png" sequence="36"/>
+        <menuitem 
+            id="menu_school"
+            name="School"
+            groups="school.school_manager_group"
+            web_icon="school,static/description/icon.png"
+            sequence="36"/>
                    
     </data>
 </odoo>

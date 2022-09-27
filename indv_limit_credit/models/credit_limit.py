@@ -10,6 +10,8 @@ class CreditLimit(models.Model):
 
     name = fields.Char(
         string="Name")
+    credit_amount = fields.Float(
+        string="Credit amount")
 
     @api.onchange('name')
     def _upper_name(self):        
