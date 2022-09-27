@@ -26,9 +26,25 @@
             <field name="arch" type="xml">
                 <form string="credit">
                     <header>
-                        <button name="write_current_state" string="send to verify" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="btn btn-primary"/>
-                        <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'current')]}" class="btn btn-primary"/>
-                        <button name="write_cancel_state" string="CANCEL" type="object" attrs="{'invisible': [('state', '=', 'cancel')]}"  class="btn btn-danger"/>
+                        <button 
+                            name="write_current_state"
+                            string="send to verify"
+                            type="object"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"
+                            class="btn btn-primary"/>
+                        <button 
+                            name="write_approval_state"
+                            string="approval"
+                            type="object"
+                            attrs="{'invisible': [('state', '!=', 'current')]}"
+                            class="btn btn-primary"/>
+                        <button 
+                            name="write_cancel_state"
+                            string="CANCEL"
+                            type="object"
+                            attrs="{'invisible': [('state', '=', 'cancel')]}"
+                            class="btn btn-danger"
+                            confirm="Are you sure you want to do this?"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <sheet>
