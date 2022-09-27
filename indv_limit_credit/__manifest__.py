@@ -15,6 +15,8 @@
 
        
         'base',
+        'sale_management',
+        'account_accountant',
 
     ],
 
