@@ -24,7 +24,7 @@
             <field name="model">credit.limit</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="school">
+                <form string="credit">
                     <header>
                         <button name="write_current_state" string="send to verify" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="btn btn-primary"/>
                         <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'current')]}" class="btn btn-primary"/>
