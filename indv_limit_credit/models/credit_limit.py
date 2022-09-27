@@ -31,6 +31,8 @@ class CreditLimit(models.Model):
         'res.users',
         'Current User',
         default=lambda self: self.env.user)
+    fee_numbers = fields.Integer(
+        string="Fee")
 
     @api.onchange('name')
     def _upper_name(self):        
@@ -46,12 +48,12 @@ class CreditLimit(models.Model):
 
     def write_current_state(self):
         if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
-            raise UserError('Solo los Directores de tienda pueden aprobar las rendiciones de gastos')
+            raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'current'})
 
     def write_approval_state(self):
         if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
-            raise UserError('Solo los Directores de tienda pueden aprobar las rendiciones de gastos')
+            raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'approved'})
 
 
