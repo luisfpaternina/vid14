@@ -50,6 +50,10 @@ class CreditLimit(models.Model):
     entity_id = fields.Many2one(
         'res.partner',
         string="Entity")
+    is_approval_credit = fields.Boolean(
+        string="Aproval credit")
+    is_cancel_credit = fields.Boolean(
+        string="Cancel credit")
 
     @api.onchange('name')
     def _upper_name(self):        
