@@ -18,7 +18,7 @@ class CreditLimit(models.Model):
         string="Credit amount")
     state = fields.Selection([
         ('draft','Draft'),
-        ('current','Current'),
+        ('current','Validation'),
         ('approved','Approved'),
         ('done','Done')],string="State")
     partner_id = fields.Many2one(
@@ -43,6 +43,11 @@ class CreditLimit(models.Model):
 
         result = super(CreditLimit, self).create(vals)
         return result
+
+
+    def write_current_state(self):
+        for record in self:
+            record.write({'state': 'current'})
 
 
 
