@@ -339,7 +339,7 @@ msgstr ""
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__percentage
 msgid "percentage"
-msgstr "Porcentaje"
+msgstr "Tasa de interés"
 
 #. module: indv_limit_credit
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form

@@ -47,6 +47,9 @@ class CreditLimit(models.Model):
     bank_id = fields.Many2one(
         'res.bank',
         string="Bank")
+    entity_id = fields.Many2one(
+        'res.partner',
+        string="Entity")
 
     @api.onchange('name')
     def _upper_name(self):        
