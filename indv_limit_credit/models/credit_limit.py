@@ -41,6 +41,9 @@ class CreditLimit(models.Model):
         string="percentage")
     credit_amount_total = fields.Float(
         string="Total")
+    bank_id = fields.Many2one(
+        'res.bank',
+        string="Bank")
 
     @api.onchange('name')
     def _upper_name(self):        
@@ -55,19 +58,28 @@ class CreditLimit(models.Model):
         return result
 
     def write_current_state(self):
-        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'current'})
 
     def write_approval_state(self):
-        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'approved'})
 
     def write_cancel_state(self):
-        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_approval_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'cancel'})
+
+    @api.constrains('partner_id','state')
+    def check_credit(self):
+        self.ensure_one()
+        same_number_recs = self.search([
+            ('partner_id', '=', self.partner_id.id),
+            ('state', '=', self.state),]) - self
+        if same_number_recs:
+            raise ValidationError(_("This partner already a credit in current: %s" % record.partner_id.name))
 
 
 
