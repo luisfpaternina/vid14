@@ -44,7 +44,7 @@
                             type="object"
                             attrs="{'invisible': [('state', '=', 'cancel')]}"
                             class="btn btn-danger"
-                            confirm="Are you sure you want to do this?"/>
+                            confirm="Are you sure you want to cancel this?"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <sheet>
