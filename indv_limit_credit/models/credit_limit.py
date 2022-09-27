@@ -95,7 +95,7 @@ class CreditLimit(models.Model):
             ('partner_id', '=', self.partner_id.id),
             ('state', '=', self.state),]) - self
         if same_number_recs:
-            raise ValidationError(_("This partner already a credit in current: %s" % record.partner_id.name))
+            raise ValidationError(_("This partner already a credit in current: %s" % self.partner_id.name))
 
     @api.constrains('fee_numbers')
     def check_faa(self):
