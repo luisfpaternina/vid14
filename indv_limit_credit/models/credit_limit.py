@@ -34,6 +34,9 @@ class CreditLimit(models.Model):
         default=lambda self: self.env.user)
     fee_numbers = fields.Integer(
         string="Fee")
+    credit_type = fields.Selection([
+        ('direct','Direct'),
+        ('third','Third')],string="Credit type")
 
     @api.onchange('name')
     def _upper_name(self):        
