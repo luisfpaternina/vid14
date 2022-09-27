@@ -55,6 +55,10 @@ class CreditLimit(models.Model):
         string="Aproval credit")
     is_cancel_credit = fields.Boolean(
         string="Cancel credit")
+    credit_line_ids = fields.One2many(
+        'credit.limit.lines',
+        'credit_id',
+        string="Quotas")
 
 
     @api.model
