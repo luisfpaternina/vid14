@@ -49,6 +49,11 @@ class CreditLimit(models.Model):
             raise UserError('Solo los Directores de tienda pueden aprobar las rendiciones de gastos')
         self.write({'state': 'current'})
 
+    def write_approval_state(self):
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+            raise UserError('Solo los Directores de tienda pueden aprobar las rendiciones de gastos')
+        self.write({'state': 'approved'})
+
 
 
 class CreditLimitLines(models.Model):
