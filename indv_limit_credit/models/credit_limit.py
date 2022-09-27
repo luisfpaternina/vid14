@@ -57,6 +57,11 @@ class CreditLimit(models.Model):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'approved'})
 
+    def write_approval_state(self):
+        if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
+            raise UserError(_('Only credit Managers can approve credits'))
+        self.write({'state': 'cancel'})
+
 
 
 class CreditLimitLines(models.Model):
