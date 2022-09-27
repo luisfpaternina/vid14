@@ -83,7 +83,7 @@
                         </group>
                         <br></br><br></br>
                         <notebook colspan="4">
-                            <page name="credit_information" string="Information">
+                            <page name="credit_information" string="Quotas">
                                 <group>
                                     <group>
                                         
