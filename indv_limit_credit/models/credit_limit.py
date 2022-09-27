@@ -40,7 +40,8 @@ class CreditLimit(models.Model):
     percentage = fields.Float(
         string="percentage")
     credit_amount_total = fields.Float(
-        string="Total")
+        string="Total",
+        compute="calculate_credit")
     entity_type = fields.Selection([
         ('bank','Bank'),
         ('other','Other')],string="Entity type")
@@ -114,6 +115,17 @@ class CreditLimit(models.Model):
         for record in self:
             if record.credit_amount < 0:
                 raise ValidationError(_("The credit amount can not 0: %s" % record.credit_amount))
+
+
+    @api.depends('credit_amount', 'percentage', 'fee_numbers')
+    def calculate_credit(self):
+        for record in self:
+            if record.fee_numbers > 0:
+                record.credit_amount_total = record.credit_amount / ((1 - (1 + record.percentage)** (- record.percentage))) / record.percentage
+            else:
+                record.credit_amount_total = 0
+
+
 
 
 
