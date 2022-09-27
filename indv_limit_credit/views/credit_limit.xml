@@ -23,8 +23,9 @@
             <field name="arch" type="xml">
                 <form string="school">
                     <header>
-                        <button name="write_current_state" string="send to verify" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                        <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'approved')]}"/>
+                        <button name="write_current_state" string="send to verify" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="btn btn-primary"/>
+                        <button name="write_approval_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'approved')]}" class="btn btn-primary"/>
+                        <button name="write_cancel_state" string="approval" type="object" attrs="{'invisible': [('state', '!=', 'calcel')]}"  class="btn btn-danger"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <sheet>

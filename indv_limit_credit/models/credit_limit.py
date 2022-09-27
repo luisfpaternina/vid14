@@ -21,7 +21,7 @@ class CreditLimit(models.Model):
         ('current','Validation'),
         ('approved','Approved'),
         ('done','Done'),
-        ('cancel','Cancel')],string="State")
+        ('cancel','Cancel')],string="State", default="draft")
     partner_id = fields.Many2one(
         'res.partner',
         string="Partner")
@@ -57,7 +57,7 @@ class CreditLimit(models.Model):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'approved'})
 
-    def write_approval_state(self):
+    def write_cancel_state(self):
         if not (self.env.user.has_group('indv_limit_credit.credit_limit_manager_group') or self.env.user.has_group('indv_limit_credit.credit_limit_manager_group')):
             raise UserError(_('Only credit Managers can approve credits'))
         self.write({'state': 'cancel'})
