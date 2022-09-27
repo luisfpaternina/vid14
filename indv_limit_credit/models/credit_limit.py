@@ -24,6 +24,9 @@ class CreditLimit(models.Model):
     partner_id = fields.Many2one(
         'res.partner',
         string="Partner")
+    vat = fields.Char(
+        string="VAT",
+        related="partner_id.vat")
 
     @api.onchange('name')
     def _upper_name(self):        
