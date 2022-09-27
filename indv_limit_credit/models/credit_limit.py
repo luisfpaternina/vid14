@@ -130,11 +130,10 @@ class CreditLimit(models.Model):
                 record.credit_amount_total = 0
 
     def calculate_credit_quotes(self):
-        lines_obj = self.env['credit.limit.lines'].search([])
         i = 1
         while i < self.fee_numbers:
             print(i)
-            lines_obj.write({
+            self.credit_line_ids.write({
                 'credit_amount': 2000,
                 'name': 'Cuota',
                 })
