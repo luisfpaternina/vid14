@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 20:14+0000\n"
-"PO-Revision-Date: 2022-09-27 20:14+0000\n"
+"POT-Creation-Date: 2022-09-28 11:20+0000\n"
+"PO-Revision-Date: 2022-09-28 11:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,6 +29,11 @@ msgstr "Aprobado"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__is_approval_credit
 msgid "Aproval credit"
 msgstr "Cédito aprovado"
+
+#. module: indv_limit_credit
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
+msgid "Are you sure you want to cancel this?"
+msgstr "Esta seguro que desea cancelar el crédito?"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_attachment_count
@@ -80,6 +85,7 @@ msgstr "Crédito"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_amount
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__credit_amount
 msgid "Credit amount"
 msgstr "Monto del crédito"
 
@@ -109,6 +115,11 @@ msgstr "Créditos"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__current_user_id
 msgid "Current User"
 msgstr "Usuario"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__date
+msgid "Date"
+msgstr "Fecha"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__credit_type__direct
@@ -189,14 +200,14 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: indv_limit_credit
-#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
-msgid "Information"
-msgstr "Información del crédito"
-
-#. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_is_follower
 msgid "Is Follower"
 msgstr "Es un seguidor"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__item
+msgid "Item"
+msgstr ""
 
 #. module: indv_limit_credit
 #: model:ir.model,name:indv_limit_credit.model_account_move
@@ -215,13 +226,13 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__write_uid
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última modificación por"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__write_date
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_main_attachment_id
@@ -310,6 +321,12 @@ msgid "Partner"
 msgstr "Cliente"
 
 #. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_line_ids
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
+msgid "Quotas"
+msgstr "Cuotas"
+
+#. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
@@ -323,6 +340,24 @@ msgstr "Pedido de venta"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__state
 msgid "State"
 msgstr "Estado"
+
+#. module: indv_limit_credit
+#: code:addons/indv_limit_credit/models/credit_limit.py:0
+#, python-format
+msgid "The credit amount can not 0: %s"
+msgstr "El monto del crédito no puede ser menor a cero"
+
+#. module: indv_limit_credit
+#: code:addons/indv_limit_credit/models/credit_limit.py:0
+#, python-format
+msgid "The faa numbers can not 0: %s"
+msgstr "El número de cuotas del crédito no puede ser menor a cero"
+
+#. module: indv_limit_credit
+#: code:addons/indv_limit_credit/models/credit_limit.py:0
+#, python-format
+msgid "The percentage can not 0: %s"
+msgstr "La tasa de interés no puede ser menor a cero"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__credit_type__third
