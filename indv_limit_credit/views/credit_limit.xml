@@ -112,7 +112,7 @@
                     <field name="state"/>
                                                                               
                 <group expand="0" string="Group By">                                            
-                    <filter string="Partner" name="partner_id" context="{'group_by': 'partner_id'}"></filter>                                              
+                    <filter string="Partner" name="partner_id" context="{'group_by': 'partner_id'}"></filter>
                 </group>                                    
             </search>                                
           </field>                            
