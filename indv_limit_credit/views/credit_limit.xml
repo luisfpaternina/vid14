@@ -102,7 +102,22 @@
                 </form>
             </field>
         </record>
-        
+
+        <record id="view_credit_limit_search" model="ir.ui.view">                                
+          <field name="name">credit.limit.search</field>                                
+          <field name="model">credit.limit</field>                                
+          <field name="arch" type="xml">                                    
+            <search string="Search credit_limit">
+                    <field name="name"/>
+                    <field name="stado"/>
+                                                                              
+                <group expand="0" string="Group By">                                            
+                    <filter string="Partner" name="partner_id" context="{'group_by': 'partner_id'}"></filter>                                              
+                </group>                                    
+            </search>                                
+          </field>                            
+        </record>
+
         <!-- ACTION -->
         <record model="ir.actions.act_window" id="action_view_credit_limit">
             <field name="name">Credit limit</field>

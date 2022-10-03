@@ -115,8 +115,10 @@
             </field>
         </record>
 
-
-        <menuitem id="school_student" name="Students" parent="menu_school"
-                  action="action_view_students"/>           
+        <menuitem 
+            id="school_student"
+            name="Students"
+            parent="menu_school"
+            action="action_view_students"/>        
     </data>
 </odoo>
