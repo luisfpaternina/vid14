@@ -145,7 +145,7 @@ class CreditLimit(models.Model):
                     'name': '# de cuota',
                     })],
                 })
-                i =+ 1
+        i =+ 1
 
 
 
