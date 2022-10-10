@@ -139,7 +139,7 @@ class CreditLimit(models.Model):
         i = 0
         rec = self.id
         if i < self.fee_numbers:
-            rec = obj = env['credit.limit'].write({
+            rec = obj = self.env['credit.limit'].write({
                 'description': 'Cuota',
                 'credit_line_ids': [(0, 0, {
                     'name': '# de cuota',
