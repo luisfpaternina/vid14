@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
+import logging
 
 
 class CreditLimit(models.Model):
@@ -136,7 +137,7 @@ class CreditLimit(models.Model):
         i = 1
         n = 1
         while i < self.fee_numbers:
-            n =+ 1
+            i =+ 1
             self.credit_line_ids.create({
                 'credit_amount': n,
                 'name': 'Cuota',
