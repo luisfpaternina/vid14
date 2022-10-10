@@ -60,6 +60,8 @@ class CreditLimit(models.Model):
         'credit.limit.lines',
         'credit_id',
         string="Quotas")
+    description = fields.Char(
+        string="Description")
 
 
     @api.model
@@ -135,12 +137,15 @@ class CreditLimit(models.Model):
 
     def calculate_credit_quotes(self):
         i = 0
+        rec = self.id
         if i < self.fee_numbers:
-            self.credit_line_ids.create({
-                'credit_amount': i,
-                'name': 'Cuota',
+            rec = obj = env['credit.limit'].write({
+                'description': 'Cuota',
+                'credit_line_ids': [(0, 0, {
+                    'name': '# de cuota',
+                    })],
                 })
-        i =+ 1
+                i =+ 1
 
 
 
