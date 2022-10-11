@@ -50,7 +50,8 @@
                             name="compute_credits"
                             string="Generate Quotas"
                             type="object"
-                            class="btn btn-success"/>
+                            class="btn btn-success"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
                     <!-- SHEET -->
