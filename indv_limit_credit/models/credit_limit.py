@@ -155,6 +155,7 @@ class CreditLimit(models.Model):
                 self.env['credit.limit.lines'].create({
                     'date': date_start,
                     'item': 1,
+                    'credit_id': loan.id
                     })
                 date_start = date_start + relativedelta(months=1)
         return True
