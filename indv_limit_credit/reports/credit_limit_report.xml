@@ -10,15 +10,12 @@
                           <tr>
                             <th>
                                 <p align="justify">
-                                    <img t-att-src="'data:image/png;base64,%s' % to_text(o.qr_code)" width="115" height="90"/>
+                                   
                                 </p>
                             </th>
                             <th>
                                 <p align="left" style="font-size: 13px;">
-                                    <span t-field="o.company_id"></span><br></br>
-                                    <span t-field="o.company_id.street"></span><br></br>
-                                    <span t-field="o.company_id.phone"></span><br></br>
-                                    <span t-field="o.company_id.email"></span>
+                                    
                                 </p>
                             </th>
                             <th>
@@ -86,20 +83,18 @@
                               <span t-field="o.partner_id.vat"></span>
                           </div>
                           <div id="cuadro2">
-                              <strong>Ascensor:</strong><span> </span><span t-field="o.product_id"></span><br></br>
-                              <strong>R.A.E:</strong><span> </span><span t-field="o.product_id.rae"></span>
+                             
                           </div>
                           <div id="espacio"></div>
                           <table style="width:100%">
                               <tr>
                                 <th>Fecha</th>
-                                <th>N°Factura</th>
+                                <th>N°</th>
                                 <th>Cliente</th>
-                                <th>Referencia</th>
                               </tr>
                               <tr>
                                 <td>
-                                    <span t-field="o.invoice_date"></span>
+                                    <span t-field="o.date"></span>
                                 </td>
                                 <td>
                                     <span t-field="o.name"></span>
@@ -107,99 +102,35 @@
                                 <td>
                                     <span t-field="o.partner_id"></span>
                                 </td>
-                                <td>
-                                    <span></span>
-                                </td>
                               </tr>
                          </table>
                          <br></br>
                          <table width="100%">
                              <thead>
                                  <tr>
-                                    <th>CONCEPTO</th>
-                                    <th>PRE.UNI.</th>
-                                    <th>CANTIDAD</th>
-                                    <th>DTO.</th>
-                                    <th>IMPORTE</th>
+                                    <th>Quote number</th>
+                                    <th>Date</th>
                                  </tr>
                              </thead>
                              <tbody>
-                                <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <t t-foreach="o.credit_line_ids" t-as="line">
                                      <tr>
                                         <td>
-                                            <span t-field="line.product_id"></span>
+                                            <span t-field="line.name"></span>
                                         </td>
                                         <td>
-                                            <span t-field="line.price_unit"></span>
-                                        </td>
-                                        <td>
-                                            <span t-field="line.quantity"  t-options="{'widget': 'integer'}"></span>
-                                        </td>
-                                        <td>
-                                           <span></span>
-                                        </td>
-                                        <td>
-                                            <span t-field="line.price_subtotal"></span>
+                                            <span t-field="line.date"></span>
                                         </td>
                                      </tr>
                                 </t>
                              </tbody>
                          </table>
                          <br></br>
-                         <table width="100%">
-                             <thead>
-                                 <tr>
-                                    <th>Base imponible</th>
-                                    <th>Base exenta</th>
-                                    <th>Recargo</th>
-                                    <th>I.V.A</th>
-                                    <th>Total factura</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
-                                <tr>
-                                    <td>
-                                        <span t-field="o.amount_untaxed"></span>
-                                    </td>
-                                    <td>
-                                        <span></span>
-                                    </td>
-                                    <td>
-                                        <span></span>
-                                    </td>
-                                    <td>
-                                        <span class="text-nowrap" t-esc="amount_by_group[3]"/>
-                                    </td>
-                                    <td style="background-color:#D8D8D8">
-                                        <strong><span t-field="o.amount_total"></span></strong>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <td colspan="5">
-                                        <p style="font-size: 9px;">
-                                            VTO/S:
-                                        </p>
-                                        <p style="font-size: 9px;">
-                                            F.PAGO:
-                                        </p>
-                                        <p style="font-size: 9px;">
-                                            C.C.C.:
-                                        </p>
-                                    </td>
-                                </tr>
-                                </t>
-                             </tbody>
-                         </table>
-                         <br></br>
-                         <p align="justify" style="font-size: 10px;">
-                             <span t-field="o.narration"></span>
-                         </p>
                        </div>
                     </div>
                     <div class="footer">
                         <p align="left" style="font-size: 7px;">
-                            <span t-field="o.company_id.terms"></span>
+                            <span t-field="o.company_id"></span>
                         </p>
                     </div>
                 </t>
