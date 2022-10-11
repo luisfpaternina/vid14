@@ -79,6 +79,10 @@ class CreditLimit(models.Model):
         string="No Of Installments",
         default=1,
         help="Number of installments")
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        default=lambda self: self.env.company)
 
 
     @api.model
