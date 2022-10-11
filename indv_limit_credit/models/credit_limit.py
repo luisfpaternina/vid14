@@ -147,7 +147,6 @@ class CreditLimit(models.Model):
         for loan in self:
             loan.credit_line_ids.unlink()
             date_start = datetime.strptime(str(loan.date), '%Y-%m-%d')
-            amount = loan.loan_amount / loan.installment
             for i in range(1, loan.installment + 1):
                 self.env['credit.limit.lines'].create({
                     'date': date_start,
