@@ -142,17 +142,6 @@ class CreditLimit(models.Model):
             else:
                 record.credit_amount_total = 0
 
-    def calculate_credit_quotes(self):
-        i = 0
-        rec = self.id
-        if i < self.fee_numbers:
-            rec = obj = self.env['credit.limit'].write({
-                'description': 'Cuota',
-                'credit_line_ids': [(0, 0, {
-                    'name': '# de cuota',
-                    })],
-                })
-        i =+ 1
 
     def compute_credits(self):
         for loan in self:
