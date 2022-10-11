@@ -2,6 +2,9 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 import logging
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+from odoo.exceptions import ValidationError, UserError
 
 
 class CreditLimit(models.Model):
@@ -62,6 +65,10 @@ class CreditLimit(models.Model):
         string="Quotas")
     description = fields.Char(
         string="Description")
+    date = fields.Date(
+        string="Payment Start Date",
+        required=True,
+        default=fields.Date.today())
 
 
     @api.model
@@ -147,6 +154,19 @@ class CreditLimit(models.Model):
                 })
         i =+ 1
 
+    def compute_credits(self):
+        for loan in self:
+            loan.credit_line_ids.unlink()
+            date_start = datetime.strptime(str(loan.date), '%Y-%m-%d')
+            amount = loan.loan_amount / loan.installment
+            for i in range(1, loan.installment + 1):
+                self.env['credit.limit.lines'].create({
+                    'date': date_start,
+                    'item': 1,
+                    })
+                date_start = date_start + relativedelta(months=1)
+        return True
+
 
 
 
@@ -166,3 +186,9 @@ class CreditLimitLines(models.Model):
         string="Date")
     item = fields.Integer(
         string="Item")
+    description = fields.Char(
+        string="Description")
+    installment = fields.Integer(
+        string="No Of Installments",
+        default=1,
+        help="Number of installments")
