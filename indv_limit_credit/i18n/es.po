@@ -38,7 +38,7 @@ msgstr "Esta seguro que desea cancelar el crédito?"
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Contador de adjuntos"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__bank_id
@@ -324,7 +324,7 @@ msgstr "Cliente"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_line_ids
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
 msgid "Quotas"
-msgstr "Cuotas"
+msgstr "CALCULAR Y GENERAR CUOTAS"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_has_sms_error
