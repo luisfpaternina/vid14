@@ -151,10 +151,10 @@ class CreditLimit(models.Model):
         for loan in self:
             loan.credit_line_ids.unlink()
             date_start = datetime.strptime(str(loan.date), '%Y-%m-%d')
-            for i in range(1, loan.installment + 1):
+            for i in range(1, loan.fee_numbers + 1):
                 self.env['credit.limit.lines'].create({
                     'date': date_start,
-                    'item': 1,
+                    'item': i,
                     'credit_id': loan.id
                     })
                 date_start = date_start + relativedelta(months=1)
