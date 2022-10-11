@@ -324,7 +324,7 @@ msgstr "Cliente"
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_line_ids
 #: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
 msgid "Quotas"
-msgstr "CALCULAR Y GENERAR CUOTAS"
+msgstr "Cuotas"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_has_sms_error
