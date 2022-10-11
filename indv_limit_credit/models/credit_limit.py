@@ -25,10 +25,11 @@ class CreditLimit(models.Model):
         ('current','Validation'),
         ('approved','Approved'),
         ('done','Done'),
-        ('cancel','Cancel')],string="State", default="draft")
+        ('cancel','Cancel')],string="State", default="draft", tracking=True)
     partner_id = fields.Many2one(
         'res.partner',
-        string="Partner")
+        string="Partner",
+        tracking=True)
     vat = fields.Char(
         string="VAT",
         related="partner_id.vat")
@@ -37,24 +38,29 @@ class CreditLimit(models.Model):
         'Current User',
         default=lambda self: self.env.user)
     fee_numbers = fields.Integer(
-        string="Fee")
+        string="Fee",
+        tracking=True)
     credit_type = fields.Selection([
         ('direct','Direct'),
-        ('third','Third')],string="Credit type")
+        ('third','Third')],string="Credit type", tracking=True)
     percentage = fields.Float(
-        string="percentage")
+        string="percentage",
+        tracking=True)
     credit_amount_total = fields.Float(
         string="Total",
-        compute="calculate_credit")
+        compute="calculate_credit",
+        tracking=True)
     entity_type = fields.Selection([
         ('bank','Bank'),
-        ('other','Other')],string="Entity type")
+        ('other','Other')],string="Entity type", tracking=True)
     bank_id = fields.Many2one(
         'res.bank',
-        string="Bank")
+        string="Bank",
+        tracking=True)
     entity_id = fields.Many2one(
         'res.partner',
-        string="Entity")
+        string="Entity",
+        tracking=True)
     is_approval_credit = fields.Boolean(
         string="Aproval credit")
     is_cancel_credit = fields.Boolean(
