@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-28 11:20+0000\n"
-"PO-Revision-Date: 2022-09-28 11:20+0000\n"
+"POT-Creation-Date: 2022-10-11 00:31+0000\n"
+"PO-Revision-Date: 2022-10-11 00:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -122,6 +122,12 @@ msgid "Date"
 msgstr "Fecha"
 
 #. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__description
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__description
+msgid "Description"
+msgstr ""
+
+#. module: indv_limit_credit
 #: model:ir.model.fields.selection,name:indv_limit_credit.selection__credit_limit__credit_type__direct
 msgid "Direct"
 msgstr "Directo"
@@ -172,6 +178,16 @@ msgstr ""
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_partner_ids
 msgid "Followers (Partners)"
+msgstr ""
+
+#. module: indv_limit_credit
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_form
+msgid "Generate Quotas"
+msgstr "GENERAR Y CALCULAR CUOTAS"
+
+#. module: indv_limit_credit
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_search
+msgid "Group By"
 msgstr ""
 
 #. module: indv_limit_credit
@@ -276,6 +292,12 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__installment
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit_lines__installment
+msgid "No Of Installments"
+msgstr ""
+
+#. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
@@ -283,6 +305,12 @@ msgstr ""
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__message_has_error_counter
 msgid "Number of errors"
+msgstr ""
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,help:indv_limit_credit.field_credit_limit__installment
+#: model:ir.model.fields,help:indv_limit_credit.field_credit_limit_lines__installment
+msgid "Number of installments"
 msgstr ""
 
 #. module: indv_limit_credit
@@ -317,8 +345,14 @@ msgstr "Otro"
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__partner_id
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_search
 msgid "Partner"
 msgstr "Cliente"
+
+#. module: indv_limit_credit
+#: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__date
+msgid "Payment Start Date"
+msgstr ""
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__credit_line_ids
@@ -335,6 +369,11 @@ msgstr ""
 #: model:ir.model,name:indv_limit_credit.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de venta"
+
+#. module: indv_limit_credit
+#: model_terms:ir.ui.view,arch_db:indv_limit_credit.view_credit_limit_search
+msgid "Search credit_limit"
+msgstr ""
 
 #. module: indv_limit_credit
 #: model:ir.model.fields,field_description:indv_limit_credit.field_credit_limit__state
