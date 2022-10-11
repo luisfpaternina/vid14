@@ -93,7 +93,7 @@
                         <notebook colspan="4">
                             <page name="credit_information" string="Quotas">
                                 <group>
-                                    <field name="credit_line_ids">
+                                    <field name="credit_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                         <tree editable="bottom">
                                             <field name="item" invisible="1"/>
                                             <field name="name"/>
