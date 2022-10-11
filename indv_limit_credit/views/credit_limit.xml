@@ -25,6 +25,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="credit">
+                    <!-- HEADER -->
                     <header>
                         <button 
                             name="write_current_state"
@@ -51,6 +52,7 @@
                             type="object"/>
                         <field name="state" widget="statusbar" readonly="1"/>
                     </header>
+                    <!-- SHEET -->
                     <sheet>
                         <widget name="web_ribbon" text="Approved" bg_color="bg-success" attrs="{'invisible': [('is_approval_credit', '=', False)]}"/>
                         <widget name="web_ribbon" text="Cancel" bg_color="bg-danger" attrs="{'invisible': [('is_cancel_credit', '=', False)]}"/>
