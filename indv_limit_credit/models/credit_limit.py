@@ -69,6 +69,10 @@ class CreditLimit(models.Model):
         string="Payment Start Date",
         required=True,
         default=fields.Date.today())
+    installment = fields.Integer(
+        string="No Of Installments",
+        default=1,
+        help="Number of installments")
 
 
     @api.model
